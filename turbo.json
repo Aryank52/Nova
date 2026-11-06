@@ -1,0 +1,41 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"]
+    },
+    "test:unit": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"]
+    },
+    "test:integration": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"]
+    },
+    "test:e2e": {
+      "outputs": ["playwright-report/**"],
+      "dependsOn": ["build"]
+    },
+    "db:seed": {
+      "outputs": ["data/nova.db"],
+      "dependsOn": ["build"]
+    },
+    "mcp:server": {
+      "cache": false,
+      "persistent": true
+    }
+  },
+  "globalDependencies": [".env*"]
+}

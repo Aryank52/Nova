@@ -1,0 +1,30 @@
+{
+  "name": "@nova/mcp-server",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run",
+    "test:unit": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "mcp:server": "node dist/index.js"
+  },
+  "dependencies": {
+    "@nova/shared": "^0.1.0",
+    "@nova/tools": "^0.1.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "express": "^4.19.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "@types/node": "^22.0.0",
+    "@types/express": "^4.17.0",
+    "@types/cors": "^2.8.0"
+  }
+}
